@@ -1,5 +1,6 @@
 package edu.my.utem.ftmk.WelcomeFirstApp;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 
@@ -14,13 +15,12 @@ public class MainActivityFirst extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main_first);
         binding = ActivityMainFirstBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
     }
 
-    public void fnGreet(View view)
-    {
-        binding.textView.setText("Hello welcome"+binding.editTextText.getText());
+    @SuppressLint("SetTextI18n")
+    public void fnGreet(View view) {
+        binding.textView.setText("Hello welcome, " + binding.editTextText.getText());
     }
 }
